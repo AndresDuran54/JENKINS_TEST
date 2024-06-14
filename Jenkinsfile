@@ -1,15 +1,18 @@
 pipeline {
-    agent any
-    stages {
-        stage('Example') {
-            steps {
-                sh 'echo "hola"'
-            }
+    agent {
+        docker {
+            image 'docker:20.10.7' // La imagen de Docker a utilizar
+            args '-v /var/run/docker.sock:/var/run/docker.sock' // Monta el socket Docker del host
         }
     }
-    post { 
-        failure { 
-            echo 'Esta ejecución ha fallado'
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Verifica que Docker funciona dentro del contenedor
+                    sh 'docker version'
+                }
+            }
         }
     }
 }
