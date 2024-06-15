@@ -12,7 +12,6 @@ pipeline {
                     // Verifica que Docker funciona dentro del contenedor
                     sh 'docker version'
                     sh 'echo "Docker Success"'
-                    // sh 'docker run -d --restart=always --name hello-world hello-world'
                     sh 'docker run -d --restart=always --name nodejsapp andresduran54/nodejsapp'
                 }
             }
