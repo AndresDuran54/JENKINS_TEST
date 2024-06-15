@@ -11,6 +11,7 @@ pipeline {
                 script {
                     // Verifica que Docker funciona dentro del contenedor
                     sh 'docker version'
+                    sh 'echo "Docker Success"'
                     // sh 'docker run -d --restart=always --name hello-world hello-world'
                 }
             }
