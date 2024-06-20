@@ -9,10 +9,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    // Verifica que Docker funciona dentro del contenedor
-                    sh 'docker version'
-                    sh 'echo "Docker Success"'
-                    sh 'docker run -d --restart=always --name nodejsapp andresduran54/nodejsapp'
+                    sh "./deploy.sh"
                 }
             }
         }
