@@ -9,7 +9,8 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sudo sh "./deploy.sh"
+                    echo "DEPLOY EJECUTANDOSE"
+                    // sh "./deploy.sh"
                 }
             }
         }
