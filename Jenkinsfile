@@ -10,11 +10,9 @@ pipeline {
             steps {
                 script {
                     sh 'chmod +x ./deploy.sh'
-                    // sh "./deploy.sh"
                 }
                 script {
-                    echo "DEPLOY EJECUTANDOSE"
-                    // sh "./deploy.sh"
+                    sh "./deploy.sh"
                 }
             }
         }
